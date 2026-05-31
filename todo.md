@@ -1,0 +1,26 @@
+# E2W Game Publishing Assessment Platform - TODO
+
+- [x] Database schema: assessments table with game data and AI results
+- [x] E2W domain knowledge base (15 published titles benchmark data)
+- [x] Steam data fetching: Steam Store API + SteamSpy API + review language stats
+- [x] Steam game search: support URL input and name search with appid resolution
+- [x] AI analysis engine: system prompt with E2W expertise for 6 modules
+- [x] Module 1: China Market Entry Assessment (player ratio, market potential, S/A/B/C/D rating)
+- [x] Module 2: ISBN & Regulatory Assessment (content risk, approval timeline, compliance suggestions)
+- [x] Module 3: Cross-platform Porting Assessment (engine, cost, ROI prediction)
+- [x] Module 4: Marketing Strategy (KOL platforms, events, community, E2W case references)
+- [x] Module 5: Omni-channel Distribution (40+ Android stores priority matrix)
+- [x] Module 6: Business Model (revenue share 60/40 vs 65/35, MG range, DLC strategy)
+- [x] Frontend: landing page with Steam URL input
+- [x] Frontend: assessment report display (structured cards + data tables)
+- [x] Frontend: radar chart for 6-module scores
+- [x] Frontend: assessment history list
+- [x] Frontend: game comparison view (via history page multi-select)
+- [x] PDF report export (browser print + markdown download)
+- [x] Dark theme professional UI design
+- [x] Vitest unit tests (13 tests passing)
+- [x] Expand channel knowledge base to 40+ stores with full matrix display
+- [x] Add data tables to assessment detail (score table, channel matrix, risk table)
+- [x] Build real comparison view with side-by-side scores/grades
+- [x] Implement proper PDF export with print-specific styling
+- [x] Add password gate: require password 0426 before accessing the assessment platform
