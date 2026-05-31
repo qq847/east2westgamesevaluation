@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import PasswordGate from "./components/PasswordGate";
+import Pipeline from "./pages/Pipeline";
 import Home from "./pages/Home";
 import AssessmentDetail from "./pages/AssessmentDetail";
 import History from "./pages/History";
@@ -13,7 +14,8 @@ import Compare from "./pages/Compare";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={Pipeline} />
+      <Route path={"/assess"} component={Home} />
       <Route path={"/assessment/:id"} component={AssessmentDetail} />
       <Route path={"/history"} component={History} />
       <Route path={"/compare"} component={Compare} />

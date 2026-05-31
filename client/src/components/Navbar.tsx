@@ -1,8 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Gamepad2, History, BarChart3 } from "lucide-react";
+import { Gamepad2, History, BarChart3, Layers } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
+
+  const navItems = [
+    { href: "/", label: "能力矩阵", icon: Layers },
+    { href: "/assess", label: "新评估", icon: BarChart3 },
+    { href: "/history", label: "历史记录", icon: History },
+  ];
 
   return (
     <nav className="border-b border-border/50 bg-background/80 backdrop-blur-xl sticky top-0 z-50">
@@ -22,30 +28,24 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-1">
-          <Link href="/">
-            <button
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                location === "/"
-                  ? "bg-primary/15 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-              }`}
-            >
-              <BarChart3 className="w-4 h-4 inline-block mr-1.5 -mt-0.5" />
-              新评估
-            </button>
-          </Link>
-          <Link href="/history">
-            <button
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                location === "/history"
-                  ? "bg-primary/15 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-              }`}
-            >
-              <History className="w-4 h-4 inline-block mr-1.5 -mt-0.5" />
-              历史记录
-            </button>
-          </Link>
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = location === item.href;
+            return (
+              <Link key={item.href} href={item.href}>
+                <button
+                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                    isActive
+                      ? "bg-primary/15 text-primary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                  }`}
+                >
+                  <Icon className="w-4 h-4 inline-block mr-1.5 -mt-0.5" />
+                  {item.label}
+                </button>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>
